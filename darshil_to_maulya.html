@@ -1,241 +1,258 @@
-
-<style>
-  @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
-  @keyframes heartbeat { 0%,100%{transform:scale(1)} 50%{transform:scale(1.2)} }
-  @keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
-  @keyframes petal { 0%{transform:translateY(-20px) rotate(0deg);opacity:1} 100%{transform:translateY(110vh) rotate(540deg);opacity:0} }
-  @keyframes shimmer { 0%,100%{opacity:0.5} 50%{opacity:1} }
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  .page {
-    min-height: 640px;
-    background: #0d0a12;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2.5rem 1.5rem 3.5rem;
-    position: relative;
-    overflow: hidden;
-    font-family: Georgia, 'Times New Roman', serif;
-  }
-
-  .star {
-    position: absolute;
-    width: 2px; height: 2px;
-    background: white;
-    border-radius: 50%;
-    animation: shimmer ease-in-out infinite;
-  }
-
-  .petal {
-    position: absolute;
-    font-size: 16px;
-    animation: petal linear infinite;
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  .top-tag {
-    font-size: 11px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #c084a0;
-    margin-bottom: 1rem;
-    animation: fadeUp 1s ease 0.2s both;
-  }
-
-  .heart {
-    font-size: 52px;
-    display: block;
-    text-align: center;
-    animation: heartbeat 1.6s ease-in-out infinite;
-    filter: drop-shadow(0 0 16px #ff4d7e99);
-    margin-bottom: 0.6rem;
-  }
-
-  .opener {
-    font-size: 18px;
-    color: #f9d0e0;
-    text-align: center;
-    line-height: 1.7;
-    max-width: 440px;
-    margin-bottom: 0.4rem;
-    animation: fadeUp 1s ease 0.5s both;
-  }
-
-  .opener em {
-    color: #ff8cb0;
-    font-style: italic;
-  }
-
-  .divider {
-    width: 80px;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, #c084a0, transparent);
-    margin: 1.6rem auto;
-    animation: fadeUp 1s ease 0.7s both;
-  }
-
-  .poem-title {
-    font-size: 22px;
-    color: #fadadd;
-    text-align: center;
-    letter-spacing: 1px;
-    margin-bottom: 2rem;
-    font-weight: 400;
-    animation: fadeUp 1s ease 0.9s both;
-  }
-
-  .poem {
-    max-width: 460px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-
-  .stanza {
-    text-align: center;
-    animation: fadeUp 0.8s ease both;
-  }
-
-  .stanza p {
-    font-size: 16px;
-    line-height: 2;
-    color: #e8c4d0;
-  }
-
-  .stanza p.glow {
-    color: #ffb3cc;
-    font-style: italic;
-  }
-
-  .stanza p.bold-line {
-    color: #ffd6e4;
-    font-size: 17px;
-  }
-
-  .ending {
-    margin-top: 2.5rem;
-    text-align: center;
-    animation: fadeUp 1s ease 2.5s both;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .love-line {
-    font-size: 26px;
-    color: #ff6b9d;
-    font-weight: 700;
-    letter-spacing: 1px;
-    animation: float 2.5s ease-in-out infinite;
-  }
-
-  .from-line {
-    font-size: 13px;
-    color: #c084a0;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-top: 6px;
-  }
-
-  .hearts-float {
-    display: flex;
-    gap: 10px;
-    font-size: 20px;
-    margin-top: 1rem;
-    animation: float 3s ease-in-out infinite;
-  }
-</style>
-
-<div class="page" id="page">
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For Maulya 💖</title>
+  <style>
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+    @keyframes heartbeat { 0%,100%{transform:scale(1)} 50%{transform:scale(1.2)} }
+    @keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+    @keyframes petal { 0%{transform:translateY(-20px) rotate(0deg);opacity:1} 100%{transform:translateY(110vh) rotate(540deg);opacity:0} }
+    @keyframes shimmer { 0%,100%{opacity:0.3} 50%{opacity:1} }
+ 
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+ 
+    html, body {
+      min-height: 100%;
+      background: #0d0a12;
+    }
+ 
+    .page {
+      min-height: 100vh;
+      background: #0d0a12;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2.5rem 1.5rem 4rem;
+      position: relative;
+      overflow: hidden;
+      font-family: Georgia, 'Times New Roman', serif;
+    }
+ 
+    .star {
+      position: fixed;
+      width: 2px; height: 2px;
+      background: white;
+      border-radius: 50%;
+      animation: shimmer ease-in-out infinite;
+      pointer-events: none;
+    }
+ 
+    .petal {
+      position: fixed;
+      font-size: 16px;
+      animation: petal linear infinite;
+      opacity: 0;
+      pointer-events: none;
+      top: 0;
+    }
+ 
+    .top-note {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #c084a0;
+      margin-bottom: 1rem;
+      animation: fadeUp 1s ease 0.2s both;
+    }
+ 
+    .heart {
+      font-size: 56px;
+      display: block;
+      text-align: center;
+      animation: heartbeat 1.6s ease-in-out infinite;
+      filter: drop-shadow(0 0 16px #ff4d7e99);
+      margin-bottom: 0.7rem;
+    }
+ 
+    .opener {
+      font-size: 18px;
+      color: #f9d0e0;
+      text-align: center;
+      line-height: 1.9;
+      max-width: 480px;
+      margin-bottom: 0.4rem;
+      animation: fadeUp 1s ease 0.5s both;
+    }
+ 
+    .opener em {
+      color: #ff8cb0;
+      font-style: italic;
+    }
+ 
+    .divider {
+      width: 80px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #c084a0, transparent);
+      margin: 1.8rem auto;
+      animation: fadeUp 1s ease 0.7s both;
+    }
+ 
+    .poem-title {
+      font-size: 24px;
+      color: #fadadd;
+      text-align: center;
+      letter-spacing: 1px;
+      margin-bottom: 2rem;
+      font-weight: 400;
+      animation: fadeUp 1s ease 0.9s both;
+    }
+ 
+    .poem {
+      max-width: 480px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 2.2rem;
+    }
+ 
+    .stanza {
+      text-align: center;
+      animation: fadeUp 0.8s ease both;
+    }
+ 
+    .stanza p {
+      font-size: 16.5px;
+      line-height: 2.1;
+      color: #e8c4d0;
+    }
+ 
+    .stanza p.glow {
+      color: #ffb3cc;
+      font-style: italic;
+    }
+ 
+    .stanza p.bold-line {
+      color: #ffd6e4;
+      font-size: 17.5px;
+    }
+ 
+    .ending {
+      margin-top: 3rem;
+      text-align: center;
+      animation: fadeUp 1s ease 2.5s both;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+ 
+    .love-line {
+      font-size: 28px;
+      color: #ff6b9d;
+      font-weight: 700;
+      letter-spacing: 1px;
+      animation: float 2.5s ease-in-out infinite;
+    }
+ 
+    .from-line {
+      font-size: 13px;
+      color: #c084a0;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: 6px;
+    }
+ 
+    .hearts-float {
+      display: flex;
+      gap: 10px;
+      font-size: 22px;
+      margin-top: 1rem;
+      animation: float 3s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body>
+  <div class="page" id="page">
+ 
+    <p class="top-note">just for you, Maulya</p>
+    <span class="heart">💖</span>
+ 
+    <p class="opener">
+      Meri jaan, thoda zyada pareshaan kardiya na&nbsp;😔<br>
+      <em>chalo, baar baar sorry sunke bhi irritate hora hoga —</em><br>
+      so here goes something just for u
+    </p>
+ 
+    <div class="divider"></div>
+ 
+    <p class="poem-title">The Day I Met You</p>
+ 
+    <div class="poem">
+ 
+      <div class="stanza" style="animation-delay:1.1s">
+        <p>The day I met you</p>
+        <p class="glow">everything around me turned weightless</p>
+        <p>all the burdens, all the noise, all the ache</p>
+        <p class="bold-line">washed away just by hearing you once</p>
+      </div>
+ 
+      <div class="stanza" style="animation-delay:1.4s">
+        <p>That was the moment I finally understood</p>
+        <p class="glow">how beautiful life could be</p>
+        <p>how quietly perfect it feels</p>
+        <p class="bold-line">when you're beside me</p>
+      </div>
+ 
+      <div class="stanza" style="animation-delay:1.7s">
+        <p>And with time you didn't just stay</p>
+        <p class="glow">you became my world</p>
+        <p>and somewhere between moments and memories</p>
+        <p class="bold-line">I fell for you</p>
+      </div>
+ 
+      <div class="stanza" style="animation-delay:2s">
+        <p>The day I met you my life found its colors</p>
+        <p class="glow">love in the warmth</p>
+        <p>happiness in your smile</p>
+        <p>belonging in your presence</p>
+        <p class="bold-line">and for the first time I found a place I could call home</p>
+      </div>
+ 
+      <div class="stanza" style="animation-delay:2.3s">
+        <p>Jaan the day I met you</p>
+        <p class="glow">I found something real</p>
+        <p class="bold-line">something true</p>
+      </div>
+ 
+    </div>
+ 
+    <div class="ending">
+      <div class="love-line">I love youuuu ❤️</div>
+      <div class="from-line">— always, Darshil</div>
+      <div class="hearts-float">💖 💗 💖 💗 💖</div>
+    </div>
+ 
+  </div>
+ 
   <script>
-    (function(){
-      const p = document.getElementById('page') || document.currentScript.parentElement;
-      for(let i=0;i<60;i++){
-        const s=document.createElement('div');
-        s.className='star';
-        s.style.left=Math.random()*100+'%';
-        s.style.top=Math.random()*100+'%';
-        s.style.animationDuration=(2+Math.random()*3)+'s';
-        s.style.animationDelay=(Math.random()*3)+'s';
-        s.style.width=s.style.height=(Math.random()>0.7?3:2)+'px';
-        p.appendChild(s);
-      }
-      const petals=['🌸','💕','🌷','💗'];
-      for(let i=0;i<7;i++){
-        const el=document.createElement('span');
-        el.className='petal';
-        el.textContent=petals[i%petals.length];
-        el.style.left=Math.random()*92+'%';
-        el.style.animationDuration=(7+Math.random()*6)+'s';
-        el.style.animationDelay=(Math.random()*5)+'s';
-        p.appendChild(el);
-      }
-    })();
+    const page = document.getElementById('page');
+ 
+    // Stars
+    for (let i = 0; i < 80; i++) {
+      const s = document.createElement('div');
+      s.className = 'star';
+      s.style.left = Math.random() * 100 + '%';
+      s.style.top = Math.random() * 100 + '%';
+      s.style.animationDuration = (2 + Math.random() * 3) + 's';
+      s.style.animationDelay = (Math.random() * 4) + 's';
+      const size = Math.random() > 0.7 ? 3 : 2;
+      s.style.width = s.style.height = size + 'px';
+      document.body.appendChild(s);
+    }
+ 
+    // Petals
+    const petals = ['🌸', '💕', '🌷', '💗', '✨'];
+    for (let i = 0; i < 10; i++) {
+      const el = document.createElement('span');
+      el.className = 'petal';
+      el.textContent = petals[i % petals.length];
+      el.style.left = Math.random() * 92 + '%';
+      el.style.animationDuration = (7 + Math.random() * 6) + 's';
+      el.style.animationDelay = (Math.random() * 6) + 's';
+      document.body.appendChild(el);
+    }
   </script>
-
-  <p class="top-note" style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#c084a0;margin-bottom:1rem;animation:fadeUp 1s ease 0.2s both">just for you, Maulya</p>
-
-  <span class="heart">💖</span>
-
-  <p class="opener">
-    Meri jaan, thoda zyada pareshaan kardiya na&nbsp;😔<br>
-    <em>chalo, baar baar sorry sunke bhi irritate hora hoga —</em><br>
-    so here goes something just for u
-  </p>
-
-  <div class="divider"></div>
-
-  <p class="poem-title">The Day I Met You</p>
-
-  <div class="poem">
-
-    <div class="stanza" style="animation-delay:1.1s">
-      <p>The day I met you</p>
-      <p class="glow">everything around me turned weightless</p>
-      <p>all the burdens, all the noise, all the ache</p>
-      <p class="bold-line">washed away just by hearing you once</p>
-    </div>
-
-    <div class="stanza" style="animation-delay:1.4s">
-      <p>That was the moment I finally understood</p>
-      <p class="glow">how beautiful life could be</p>
-      <p>how quietly perfect it feels</p>
-      <p class="bold-line">when you're beside me</p>
-    </div>
-
-    <div class="stanza" style="animation-delay:1.7s">
-      <p>And with time you didn't just stay</p>
-      <p class="glow">you became my world</p>
-      <p>and somewhere between moments and memories</p>
-      <p class="bold-line">I fell for you</p>
-    </div>
-
-    <div class="stanza" style="animation-delay:2s">
-      <p>The day I met you my life found its colors</p>
-      <p class="glow">love in the warmth</p>
-      <p>happiness in your smile</p>
-      <p>belonging in your presence</p>
-      <p class="bold-line">and for the first time I found a place I could call home</p>
-    </div>
-
-    <div class="stanza" style="animation-delay:2.3s">
-      <p>Jaan the day I met you</p>
-      <p class="glow">I found something real</p>
-      <p class="bold-line">something true</p>
-    </div>
-
-  </div>
-
-  <div class="ending">
-    <div class="love-line">I love youuuu ❤️</div>
-    <div class="from-line">— always, Darshil</div>
-    <div class="hearts-float">💖 💗 💖 💗 💖</div>
-  </div>
-
-</div>
+</body>
+</html>
